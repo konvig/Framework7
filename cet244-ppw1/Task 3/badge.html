@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <title>Component 3</title>
+</head>
+
+<body>
+    <div id="container"></div>
+
+</body>
+<script type="text/babel">
+
+//I have created a component for every single thing to showcase seperation of compoents
+// for example if it was just up to me, i would create a single component for name/job/email etc..
+// Separated here to show separation and to do some css for individual smaller components
+// Everything is glued put together in single component
+
+//class badgeImage - component
+    class BadgeImage extends React.Component{
+        render(){
+            //css styls
+            var badgeImageStyle={
+                display: "block",
+                height: 240,
+                width: 335,
+                backgroundSize: "cover",
+                backgroundImage: `url(${this.props.image})`,
+                marginBottom: 10,
+                marginLeft: "auto",
+                marginRight: "auto",
+            };
+            //returning div with badgeImageStyle
+            return(
+               <div style={badgeImageStyle}>
+                <br/>
+                </div> 
+            )
+        }
+    }        
+//class name - component
+    class Name extends React.Component{
+        render(){
+            //css style
+            var nameStyle={
+            fontSize: 32,
+            textAlign: "center",
+            marginBottom: 0,
+            color: "#fff",
+            fontFamily: "Lato",
+            fontWeight: 100,
+            paddingTop: 5,
+            paddingBottom: 5,   
+            borderTop: "1px solid #ffffffad",
+            borderBottom: " 1px solid #ffffffad",
+            borderBottomLength: 100,
+            marginTop: 0
+            };
+            //returns paragraph with nameStyle and name attrib set in DOM render
+            return(
+                <p style={nameStyle}> {this.props.name}</p>
+            );
+
+        }
+    }
+//class Job - component
+    class Job extends React.Component{
+        render(){
+            //style
+            var jobStyle={
+                    fontSize: 25,
+                    textAlign: "center",
+                    color: "#fff",
+                    marginTop:0,
+                    fontFamily: "Lato",
+                    fontWeight: 400,
+                    paddingTop: 5,
+                    paddingBottom: 5,  
+                    borderBottom: "1px solid #ffffffad"
+            };
+            //returns paragraph with jobStyle and job attrib set in DOM render
+            return(
+            <p style={jobStyle}> {this.props.job}</p>
+            );
+        }
+    }
+//class ConferenceRole - component
+    class ConferenceRole extends React.Component{
+        render(){
+                //css style
+                var roleStyle={
+                    fontSize: 16,
+                    fontFamily: "Lato",
+                    textAlign: "center",
+                    fontWeight: 100,
+                    fontStyle: "italic",
+                    color: "#fff",
+                    marginTop: 0
+                }
+                //returns paragraph with roleStyle and role attrib set in DOM
+            return(
+                <p style={roleStyle}>{this.props.role}</p>
+            );
+        }
+    }
+//Class ConferenceBadge - component - in this component i am putting everything together
+//all components are glued to a single one which can be called in DOM
+        class ConferenceBadge extends React.Component{            
+            render(){
+                //CSS
+                var attendee={
+                    height: 450,
+                    width:340,
+                    display:"block",
+                    backgroundColor: "#FFF",
+                    boxShadow: "0px 0px 4px #777",
+                    padding:30,
+                    borderRadius: 10,
+                    marginLeft: 25,
+                    marginTop: 25,
+                    float: "left",
+                    backgroundColor: "#623ba7d1",
+                    margin: 50
+                }
+                var presenter={
+                    height: 450,
+                    width:340,
+                    display:"block",
+                    backgroundColor: "#FFF",
+                    boxShadow: "0px 0px 4px #777",
+                    padding:30,
+                    borderRadius: 10,
+                    marginLeft: 25,
+                    marginTop: 25,
+                    float: "left",
+                    backgroundColor: "#499603a3",
+                    margin: 50
+                }
+                var volunteer={
+                    height: 450,
+                    width:340,
+                    display:"block",
+                    backgroundColor: "#FFF",
+                    boxShadow: "0px 0px 4px #777",
+                    padding:30,
+                    borderRadius: 10,
+                    marginLeft: 25,
+                    marginTop: 25,
+                    float: "left",
+                    backgroundColor: "#ffad47e3",
+                    margin: 50
+                }
+                var headStyle={
+                    marginBottom: 10,
+                    marginTop: 5,
+                    fontFamily: "Lato",
+                    textAlign: "center",
+                    fontWeight: 100,
+                    fontSize: 40,
+                    color: "#fff",
+                    
+                }
+
+                //if statement which takes the role and matches it with a role
+                //if the role is attendee -> rolesheet is equal attendee
+                // than i use this parameter as a css style which is different
+                //for each component - just to experiment I've added images
+                //to make badge more unique and dynamic
+                var roleSheet;
+                var image;
+                if(this.props.role == "attendee")
+                {
+                    roleSheet = attendee;
+                    image = "attendee.png";
+                }
+                else if(this.props.role == "presenter")
+                {
+                    roleSheet = presenter;
+                    image = "presenter.png"
+                }
+                
+                else if(this.props.role == "volunteer")
+                {
+                    roleSheet = volunteer;
+                    image ="volunteer.png"
+                }
+                //Returns all the smaller components together with properties that arae set in DOM
+                return(
+                    <div style={roleSheet}>
+                    <h1 style={headStyle}> Hack Event 2019 </h1>
+                    <BadgeImage image={image}/>
+                    <ConferenceRole role={this.props.role}/>
+                    <Name name={this.props.name}/>
+                    <Job job={this.props.job}/>
+                    <br/>
+                    </div>
+                );
+            }
+        }
+//Rendering method which creates conference badges One component which is built from a smaller ones
+        ReactDOM.render(
+            <div>
+                <ConferenceBadge name="Barbora Bednarova" job="AI Developer" email="Barbora@bednarova.cz" role="attendee"/>
+                <ConferenceBadge name="Ondrej Vesely" job="JS Developer" email="Ondrej@vesely.cz" role="presenter"/>
+                <ConferenceBadge name="Torgo Nudho" job="Back-End Developer" email="Torgo@nudho.com" role="volunteer"/>
+            </div>,
+    //QuerySelector - equivalent of docuemnt get element by id - Container
+            document.querySelector("#container")
+        );
+    </script>
+
+</html>
