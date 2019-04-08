@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#2196f3">
+  <!-- Your app title -->
+  <title>Board World</title>
+  <!-- Path to Framework7 Library CSS -->
+  <link rel="stylesheet" href="node_modules/framework7/css/framework7.min.css">
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <!-- App root element -->
+  <div id="app">
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <img src="/img/side-panel-logo.png" alt="About us logo" style="max-width: 80px; display: block; margin-left: auto; margin-right: auto; width: 50%; margin-top: 30px; margin-bottom: 10px;">
+        <!--Aligning content to block - tittle MAIN MENU-->
+        <div class="content-block-title" style="text-transform: capitalize; font-size: 20px; color: #6B6B6B; text-align: center; margin-top: 0px !important;  ">Main
+          menu</div>
+        <div class="list links-list" style="margin: 10px;">
+          <ul>
+            <li class="panel-close"><a href="/">Home</a></li>
+            <li class="panel-close"><a href="/products/">Boards in database</a></li>
+            <li class="panel-close"><a href="/surfboards/">Surfboards</a></li>
+            <li class="panel-close"><a href="/snowboards/">Snowboards</a></li>
+            <li class="panel-close"><a href="/about/">About us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" style="margin: 30px; margin-top: 10px !important; margin-bottom: 10px !important;">
+        <div class="col-25"><a href="https://www.facebook.com"><img src="/img/icon-facebook.png" style="width: 100%"></a></div>
+        <div class="col-25"><a href="https://www.twitter.com"><img src="/img/icon-twitter.png" style="width: 100%"></a></div>
+        <div class="col-25"><a href="https://www.youtube.com"><img src="/img/icon-youtube.png" style="width: 100%"></a></div>
+        <div class="col-25"><a href="https://www.instagram.com"><img src="/img/icon-instagram.png" style="width: 100%"></a></div>
+        <hr class="separator1">
+      </div>
+      <img src="/img/panel-image1.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%; margin-bottom: 10px;">
+    </div>
+    <div class="statusbar"></div>
+    <div class="view view-main">
+      <div data-name="home" class="page">
+        <div class="navbar" style="background: rgba(255, 255, 255, 0.60) !important; padding-top: 0px !important; ">
+          <div class="navbar-inner">
+            <div class="center sliding" style="font-family: 'Alinea', sans-serif; color: #545454; font-size:43px; padding-left: 20px;">Board World</div>
+            <div class="right">
+              <a href="#" class="link icon-only panel-open"><img src="/img/icon-menu.png" style="width: 20px;"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div data-speed="1000" data-pagination='{"el": ".swiper-pagination"}' data-space-between="5" class="swiper-container swiper-init demo-swiper">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="/img/slider1.jpg" style="width: 100%"></div>
+              <div class="swiper-slide"><img src="/img/slider2.jpg" style="width: 100%"></div>
+              <div class="swiper-slide"><img src="/img/slider3.jpg" style="width: 100%"></div>
+              <div class="swiper-slide"><img src="/img/slider4.jpg" style="width: 100%"></div>
+              <div class="swiper-slide"><img src="/img/slider5.jpg" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="block-title" style="font-size:20px; text-align: center; color: #6b6b6b !important; margin-bottom: 12px !important; line-height: 21px;">Welcome
+            to our catalogue!</div>
+          <div class="block block-strong tablet-inset" style="margin-bottom: 14px">
+            <p style="font-size: 16px; text-align: justify; color: #727272;">We are pleased to welcome you on our new
+              web application. It's still in
+              development so bare with us please. For now you can check what surfboards and snowboards we have in store
+              and there are way more to come! We are
+              adding few boards every day. </p>
+            <button class="col button color-gray" style="border: 1px solid #8e8e935e; width: 70%; margin: 0 auto; height: 45px;"><a
+                href="/products/" style="color: #6b6b6b;">Browse our catalogue!</a></button>
+          </div>
+          <div style="padding-bottom: 10px !important; margin-top: 0px;">
+            <div class="row">
+              <div class="col"><img src="/img/roxy.jpg" class="roxy"></div>
+              <div class="col"><img src="/img/billabong.jpg" class="billabong"></div>
+              <div class="col"><img src="/img/rip_curl.jpg" class="ripcurl"></div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <hr class="separator">
+              </div>
+              <div class="col">
+                <hr class="separator">
+              </div>
+              <div class="col">
+                <hr class="separator">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col"><img src="/img/firewire.jpg" class="firewire"></div>
+              <div class="col"><img src="/img/pyzel.jpg" class="pyzel"></div>
+              <div class="col"><img src="/img/bradley.jpg" class="ripcurl"></div>
+            </div>
+            <hr class="separator1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="node_modules/framework7/js/framework7.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

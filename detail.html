@@ -1,0 +1,285 @@
+[<style>
+  #gallery {
+    max-width: 100% !important;
+    border-radius: 5px !important;
+  }
+  .md .block-strong {
+    padding: 16px !important;
+  }
+
+  .md .block {
+    margin: 0px !important;
+    margin-left: 6px !important;
+    margin-right: 6px !important;
+  }
+  .listArrow
+  {
+    list-style-image: url('/img/arrow.png');
+    font-size: 16px;
+    color: #727272;
+
+  }
+  .photo-browser-current
+  {
+    color: #6b6b6b !important;
+  }
+  .photo-browser-of
+  {
+    color: #6b6b6b !important;
+  }
+  .photo-browser-total
+  {
+    color:#6b6b6b !important;
+  }
+  .md .icon-back
+  {
+    background-image: url("/img/icon-back.png");
+    width: 13px;
+  }
+  .md .icon-forward
+  {
+    background-image: url("/img/icon-forward.png");
+    width: 13px;
+  }
+  .md .photo-browser-page .navbar, .md .photo-browser-page .toolbar
+  {
+    background: rgba(255, 255, 255, 0.5) !important;
+  }
+  .md .swiper-pagination-bullet-active
+  {
+    background: #ffffff;
+  }
+  .blocktest
+  {
+    margin: 0px !important;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+  }
+  .md .item-input-focused .item-floating-label, .md .item-input-focused .item-label
+  {
+    color:#6b6b6b !important;
+    font-weight: bold;
+  }
+  .md .input-focused:after, .md .item-input-focused .item-input-wrap:after
+  {
+    background:#6b6b6b !important;
+  }
+.accordion-item-opened
+{
+    padding-bottom: 20px;
+}
+.md .block-title
+{
+ line-height: 20px !important;
+}
+#btn
+{
+  
+  color: #6b6b6b;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+</style>
+<template>
+  <div class="page" data-page="weblinks" style="padding-top: 50px !important;">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <img src="/img/icon-back.png" style="width: 13px;">
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title" style="color:#6b6b6b">{{item.Title}}</div>
+        <div class="right">
+          <a href="#" class="link icon-only panel-open"><img src="/img/icon-menu.png" style="width: 20px;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block block-strong">
+        <div data-speed="900" data-pagination='{"el": ".swiper-pagination"}' data-space-between="10" class="swiper-container swiper-init demo-swiper">
+          <div class="swiper-pagination"></div>
+          <div class="swiper-wrapper" style="padding-top: 10px;">
+            <div class="swiper-slide"><a href="#"><img src="{{item.Image_tit}}" id="gallery" alt="Image" class="test1"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{item.Gallery1}}" id="gallery" alt="Image 1"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{item.Gallery2}}" id="gallery" alt="Image 2"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{item.Gallery3}}" id="gallery" alt="Image 3"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{item.Gallery4}}" id="gallery" alt="Image 4"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{item.Gallery5}}" id="gallery" alt="Image 5"></a></div>
+          </div>
+        </div>
+        <div class="block-title" style="text-align: center; margin: 0px !important; padding: 0px !important; font-size: 12px;">{{item.Title}}</div>
+      </div>
+      <div class="block-title" style="text-align: center; font-size: 21px; margin-top: 15px;">Basic information</div>
+      <div class="block block-strong">
+        <div class="row">
+          <div class="col-50">
+            <li class="listArrow">Brand: {{item.Brand}}</li>
+            <li class="listArrow">Ability: {{item.Ability}}</li>
+            <li class="listArrow">Length: {{item.Length}}</li>
+          </div>
+          <div class="col-50">
+            <li class="listArrow">Gender: {{item.Gender}}</li>
+            <li class="listArrow">Price: {{item.Price}}</li>
+            <li class="listArrow">In stock: {{item.Stock}}</li>
+          </div>
+        </div>
+      </div>
+      <div class="block-title" style="text-align: center; font-size: 21px; margin-top: 15px;">Description</div>
+      <div class="block block-strong">
+        <p style="font-size: 16px; text-align: justify; color: #727272;">{{item.Description}}</p>
+      </div>
+      <div class="block-title" style="text-align: center; font-size: 21px; margin-top: 15px;">Reviews</div>
+      <div class="list accordion-list">
+        <ul>
+          <li class="accordion-item"><a href="#" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Add New Review</div>
+              </div>
+            </a>
+            <div class="accordion-item-content">
+              <div class="blocktest">
+                <form class="list" id="my-form" method="post" action="http://localhost:3000/insert" enctype="multipart/form-data">
+                  <ul>
+                    <li>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Product ID</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="Id" placeholder="Product ID..." value="{{item.Id}}" class="readonly"
+                              readonly="true" style="color: #6b6b6b !important;">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Product title</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="Id" placeholder="Product title" value="{{item.Title}}" class="readonly"
+                              readonly="true" style="color: #6b6b6b !important;">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Rating</div>
+                          <div class="item-input-wrap">
+                            <input id="valid" type="number" min="0" max="10" name="rating" placeholder="Rating 1/10"
+                              style="color: #6b6b6b !important;" required />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Review</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="review" placeholder="Type your review.." required />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <input type="Submit" name="submit" value="submit" class="button convert-form-to-data" style="color: #6b6b6b !important;">
+                </form>
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item"><a href="#" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">User Reviews</div>
+              </div>
+            </a>
+            <div class="accordion-item-content">
+              <div class="block">
+                {{#each $root.reviews}}
+                <div class="block" style="margin-bottom: 25px !important;">
+                  <div class="row">
+                    <div class="col-70">
+                      <p style="margin-bottom: 0px !important; color:#6b6b6b; text-align: left;">Product: {{pTitle}}</p>
+                    </div>
+                    <div class="col-30">
+                      <p style="margin-bottom: 0px !important; color:#6b6b6b; text-align: right;"> Rating:
+                        {{rating}}/10</p>
+                    </div>
+                  </div>
+                  <hr style="margin-bottom: 0px !important; margin-top: 0px !important; background-color: #6b6b6b;">
+                  <p style="font-size: 13px; text-align: justify; color: #727272;">{{review}}</p>
+                </div>
+                {{/each}}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</template>
+<script>
+  return {
+    data: function () {
+      return {
+        item: this.$root.products[this.$route.params.id],
+        review: this.$root.reviews[this.$route.params.id],
+      }
+    },
+    /* methods: {
+      openStandaloneLight: function () {
+        const self = this;
+        self.standaloneLight.open();
+      },
+    }, */
+    on: {
+      pageInit: function () {
+
+        /*  const self = this;
+         // Create PBs when page init
+ 
+         self.standaloneLight = self.$app.photoBrowser.create({
+           photos: self.$app.data.products,
+           theme: 'Light',
+         }); */
+
+
+        $("#valid").focus(function () {
+          var $this = $(this)
+
+          t = setInterval(
+
+            function () {
+              if (($this.val() < 1 || $this.val() > 10) && $this.val().length != 0) {
+                if ($this.val() < 1) {
+                  $this.val(1)
+                }
+
+                if ($this.val() > 10) {
+                  $this.val(10)
+                }
+              }
+            }, 50)
+        })
+        $("#valid").blur(function () {
+          if (t != false) {
+            window.clearInterval(t)
+            t = false;
+          }
+        });
+        console.log()
+      },
+      pageBeforeRemove: function () {
+        /*         const self = this;
+                // Destroy PBs on page remove
+                self.standaloneLight.destroy(); */
+      },
+    }
+  };
+</script>]

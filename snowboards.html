@@ -1,0 +1,35 @@
+<template>
+  <div class="page" data-page="weblinks">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <img src="/img/icon-back.png" style="width: 13px;">
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title" style="color:#6b6b6b">Snowboards</div>
+        <div class="right">
+          <a href="#" class="link icon-only panel-open"><img src="/img/icon-menu.png" style="width: 20px;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="list-index"></div>
+    <div class="page-content" style="padding-top: 50px !important;">
+      <div class="list links-list">
+        <ul>
+          {{#each $root.snowboards}}
+          <li><a href="/detail/{{Id}}/">{{Title}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</template>
+<script>
+  return {}
+  var listIndex = app.listIndex.create({
+  });       
+</script>
+<!-- More info on lists available at https://framework7.io/docs/list-index.html  -->

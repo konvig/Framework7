@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Alinea;
+    src: url(http://localhost:3000/fnt/Alinea.ttf);
+    }
+    
+    .md .navbar
+      {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+    .md .list .item-content
+      {
+        color: #6b6b6b !important;
+      }
+    .md .links-list a, .md .list .item-link .item-inner
+      {
+        color: #6b6b6b !important;
+      }
+      .md .swiper-pagination-bullet-active
+      {
+        background: #fff !important;
+      }
+      .md .navbar~* .page-content, .md .navbar~.page-content
+      {
+         padding-top: 0px !important; 
+      }
+      .roxy
+      {
+        width: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.10);
+        border-bottom-width: 80%;
+        padding-right: 7px;
+      }
+      .firewire
+      {
+        width: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.10);
+        padding-right: 7px;
+      }
+      .pyzel
+      {
+        width: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.10);
+        border-bottom-width: 80%;
+        padding-right: 7px;
+      }
+      .billabong
+      {
+        width: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.10);  
+        padding-right: 7px;
+      }
+      .ripcurl
+      {
+        width:100%;
+      }
+      .bradley
+      {
+        width:100%;
+      }
+      .separator
+      {
+        background-color: rgba(0, 0, 0, 0.10);
+        width: 85%;
+        border: none;
+        height: 1px;
+      }
+      .separator1
+      {
+        background-color: rgba(0, 0, 0, 0.10);
+        width: 100%;
+        border: none;
+        height: 1px;
+      }
+
+      .md .button.color-gray {
+        color: #6b6b6b;
+      }
+      
+ 
