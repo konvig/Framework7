@@ -1,0 +1,2 @@
+npm install pro API i pro Aplikaci .ignore pro node_modules kvuli velikosti
+API musí bıt mimo sloku aplikace - node api-sqlite.js -> spuštení
